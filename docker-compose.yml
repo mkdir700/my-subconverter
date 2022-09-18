@@ -8,9 +8,9 @@ services:
       - "25500:25500"
   frontend:
     container_name: subweb
-    image: careywong/subweb:latest
+    image: mkdir700/sub-web:latest
     restart: unless-stopped
     ports:
       - "58080:80"
     env_file:
-      - ./frontend/.env
+      - ./conf/.env
