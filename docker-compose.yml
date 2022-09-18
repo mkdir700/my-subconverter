@@ -6,9 +6,11 @@ services:
     restart: unless-stopped
     ports:
       - "25500:25500"
+    volumes:
+      - ./base/pref.toml:/base/pref.toml
   frontend:
     container_name: subweb
-    image: mkdir700/sub-web:latest
+    image: careywong/subweb:latest
     restart: unless-stopped
     ports:
       - "58080:80"
