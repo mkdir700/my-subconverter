@@ -1,0 +1,18 @@
+version: '3'
+services:
+  backend:
+    container_name: subconverter
+    image: tindy2013/subconverter:latest
+    restart: unless-stopped
+    ports:
+      - "25500:25500"
+    # volumes:
+      # - ./backend/base:/base
+  frontend:
+    container_name: subweb
+    image: careywong/subweb:latest
+    restart: unless-stopped
+    ports:
+      - "58080:80"
+    env_file:
+      - ./frontend/.env
