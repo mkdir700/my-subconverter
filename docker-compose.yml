@@ -6,8 +6,6 @@ services:
     restart: unless-stopped
     ports:
       - "25500:25500"
-    # volumes:
-      # - ./backend/base:/base
   frontend:
     container_name: subweb
     image: careywong/subweb:latest
